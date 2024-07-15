@@ -1,0 +1,24 @@
+diff --git a/indy7_moveit_config/launch/planning_context.launch b/indy7_moveit_config/launch/planning_context.launch
+index 8f429aa..d4faf76 100644
+--- a/indy7_moveit_config/launch/planning_context.launch
++++ b/indy7_moveit_config/launch/planning_context.launch
+@@ -6,7 +6,7 @@
+   <arg name="robot_description" default="robot_description"/>
+ 
+   <!-- Load universal robot description format (URDF) -->
+-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '$(find indy7_description)/urdf/indy7_fixed.xacro'"/>
++  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro '$(find indy7_description)/urdf/indy7_fixed.xacro'"/>
+ 
+   <!-- The semantic description that corresponds to the URDF -->
+   <param name="$(arg robot_description)_semantic" textfile="$(find indy7_moveit_config)/config/indy7.srdf" />
+diff --git a/indy7_v2_description/CMakeLists.txt b/indy7_v2_description/CMakeLists.txt
+index 16e0d91..41cf5bb 100644
+--- a/indy7_v2_description/CMakeLists.txt
++++ b/indy7_v2_description/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ cmake_minimum_required(VERSION 2.8.3)
+-project(indy7_description)
++project(indy7_v2_description)
+ 
+ ## Compile as C++11, supported in ROS Kinetic and newer
+ # add_compile_options(-std=c++11)
