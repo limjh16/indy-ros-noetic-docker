@@ -1,2 +1,1 @@
-source ~/indy_ws/devel/setup.bash
-source ~/catkin_ws/devel/setup.bash
+source ~/workspaces/catkin_ws/devel/setup.bash
