@@ -17,4 +17,5 @@ docker run -it \
   -p 6066 \
   "${gpu_support_args[@]}" \
   --name apicoo_ros1 \
+  --privileged \
   limjh16/indy-ros-noetic

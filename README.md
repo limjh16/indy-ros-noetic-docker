@@ -38,6 +38,7 @@ apt install libnvidia-fbc1-535 libnvidia-gl-535 # install in Container
 
 ### Helper Scripts
 - <https://wiki.ros.org/docker/Tutorials/GUI#The_simple_way> - reference for helper scripts, for enabling X-servers
+- `docker run` is run with `--privileged` to fix X Error - <https://github.com/NVIDIA/nvidia-docker/issues/496#issuecomment-339511254>
 
 ## SSH keys in Docker
 - Easy way to share ssh keys with host: <https://stackoverflow.com/a/46406567> (mount host .ssh into docker)
