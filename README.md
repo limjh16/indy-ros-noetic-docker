@@ -37,31 +37,7 @@ apt install libnvidia-fbc1-535 libnvidia-gl-535 # install in Container
 <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html> - install ON HOST
 
 ### Helper Scripts
-<https://wiki.ros.org/docker/Tutorials/GUI#The_simple_way> - reference of the next 2 files, for X-servers
-```bash
-#!/usr/bin/env bash
-
-# docker_run.sh
-
-docker run -it \
-  --env="DISPLAY" \
-  --env="QT_X11_NO_MITSHM=1" \
-  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  -p 6066 \
-  # --runtime=nvidia --gpus all \ # Uncomment if using NVIDIA GPU
-  # --device=/dev/dri:/dev/dri \ # Uncomment if using Intel iGPU
-  --name apicoo_ros1 \
-  limjh16/indy-ros-noetic
-```
-
-```bash 
-#!/usr/bin/env bash
-
-# xhost_add.sh
-
-export containerId=$(docker ps -l -q)
-xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId`
-```
+- <https://wiki.ros.org/docker/Tutorials/GUI#The_simple_way> - reference for helper scripts, for enabling X-servers
 
 ## SSH keys in Docker
 - Easy way to share ssh keys with host: <https://stackoverflow.com/a/46406567> (mount host .ssh into docker)
