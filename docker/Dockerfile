@@ -27,7 +27,10 @@ RUN apt-get update && apt-get install -y \
                                         ros-noetic-joint-state-controller \
                                         ros-noetic-effort-controllers \
                                         ros-noetic-position-controllers \
-                                        ros-noetic-joint-trajectory-controller
+                                        ros-noetic-joint-trajectory-controller \
+                                        ros-noetic-moveit-visual-tools \
+                                        ros-noetic-rviz-visual-tools \
+                                        python3-catkin-tools
 
 WORKDIR $HOME
 RUN mkdir -p workspaces/indy_ws/src/indy-ros

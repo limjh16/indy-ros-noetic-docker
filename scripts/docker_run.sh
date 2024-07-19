@@ -15,7 +15,7 @@ docker run -it \
   --env="QT_X11_NO_MITSHM=1" \
   --env="color_prompt=yes" \
   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  -p 6066 \
+  -p 6066:6066 \
   "${gpu_support_args[@]}" \
   --name apicoo_ros1 \
   --privileged \
