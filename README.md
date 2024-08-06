@@ -60,3 +60,17 @@ ROS1 broken files to change: (these changes are in `files/indy-ros_fixes.patch` 
   - Reference: <https://wiki.ros.org/noetic/Migration#Use_xacro_instead_of_xacro.py>
 - [indy-ros/indy7_v2_description/CMakeLists.txt](https://github.com/neuromeka-robotics/indy-ros/blob/release-2.3/indy7_v2_description/CMakeLists.txt#L2) line 2 needs to change to `project(indy7_v2_description)`
 - PR submitted, pending merge <https://github.com/neuromeka-robotics/indy-ros/pull/8>
+
+Allowed execution duration timeout
+- Change this line in [`workspaces/indy-ros/indy7_moveit_config/launch/trajectory_execution.launch.xml`](https://github.com/neuromeka-robotics/indy-ros/blob/release-2.3/indy7_moveit_config/launch/trajectory_execution.launch.xml#L10) and increase it to prevent the timeout error
+
+---
+
+# Other USB Devices
+
+Edit `scripts/docker_run.sh` and add the following lines:
+```diff
++ -v /dev/bus/usb:/dev/bus/usb \
++ --device-cgroup-rule='c 189:* rmw' \
+```
+Example from https://docs.luxonis.com/software/depthai/manual-install/#Manual%20DepthAI%20installation-Installing%20dependencies-Docker
